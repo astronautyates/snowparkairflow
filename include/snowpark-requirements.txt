@@ -1,0 +1,4 @@
+snowflake-snowpark-python[pandas]
+apache-airflow
+psycopg2-binary
+apache-airflow-providers-snowflake
