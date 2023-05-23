@@ -1,5 +1,6 @@
 '''
 ###Snowpark + PythonVirtualEnvironmentOperator DAG
+This DAG uses the PythonVirtualEnvironment Operator to run a Snowpark Query in Snowflake
 '''
 
 from __future__ import annotations
