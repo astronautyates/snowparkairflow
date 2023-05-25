@@ -1,6 +1,8 @@
 '''
-###Snowpark + PythonVirtualEnvironmentOperator DAG
-This DAG uses the PythonVirtualEnvironment Operator to run a Snowpark Query in Snowflake
+### Execute a Snowflake Query in a Python Virtual Environment with Snowpark
+
+This DAG showcases the @task.external_python TaskFlow decorator to run a Snowflake query via the Snowpark API
+in an external Python virtual environment.
 '''
 
 from __future__ import annotations
@@ -15,11 +17,11 @@ from airflow.decorators import task
 
 with DAG(
     "py_virtual_env",
-    schedule_interval=None,
+    schedule=None,
     start_date=pendulum.datetime(2022, 10, 10, tz="UTC"),
     catchup=False,
     tags=["pythonvirtualenv"],
-) as dag:
+):
 
     @task(task_id="print_the_context")
     def print_context(ds=None, **kwargs):
@@ -39,7 +41,7 @@ with DAG(
         conn_params = hook._get_conn_params()
         session = Session.builder.configs(conn_params).create()
         query = """
-            select avg(reps_upper), avg(reps_lower) 
+            select avg(reps_upper), avg(reps_lower)
             from dog_intelligence;
             """
         df = session.sql(query)
