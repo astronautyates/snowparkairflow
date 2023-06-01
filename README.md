@@ -4,12 +4,12 @@
   </a>
 </p>
 <h1 align="center">
-  Run Snowpark Queries in Airflow using the PythonVirtualEnvironment Operator
+  Run Snowpark Queries in Airflow using an External Virtual Environment
 </h1>
   <h3 align="center">
   In this tutorial, you'll learn how to use the ExternalPythonOperator to run a task that leverages the Snowpark API for data transformations. Snowpark allows you to run queries and transformations on your data using different programming languages, making it a flexible addition to traditional Snowflake operators.
 
-  
+
 
 </a>.
   </br></br>
@@ -23,7 +23,7 @@
 
   Snowpark requires Python 3.8, while the Astro Runtime uses Python 3.9. The ExternalPythonOperator can run your Snowpark query in a Python 3.8 virtual environment, allowing you to use a different Python version for your task than in the Airflow environment. You can use these same general steps for any use case for running a task in a reusable Python virtual environment.
 
-  To run this locally, make sure to enable buildkit for your local docker engine! 
+  To run this locally, make sure to enable buildkit for your local docker engine!
 </p>
 
 </br>
